@@ -102,35 +102,21 @@ price ± 1.96 × standard error
 
 ---
 
-## Project Structure
-
-src/main/java/com/quant/engine
-├─ OptionType.java
-├─ Payoff.java
-├─ EuropeanPayoff.java
-├─ AsianArithmeticPayoff.java
-├─ MonteCarloEngine.java
-├─ SimulationResult.java
-└─ Main.java
-
-
-
----
-
 ## Build
 
 Java 17 compatible build:
 
 ```bash
 
+✔ Build
 javac --release 17 -d out src/main/java/com/quant/engine/*.java
+
 jar cfm option-pricing-engine.jar manifest.txt -C out .
 
 ✔ Run
-
 java -jar option-pricing-engine.jar 100 100 0.05 0.2 1 252 200000 CALL EURO
 
 ✔ Docker
-
 docker build -t option-pricing-engine .
+
 docker run option-pricing-engine
